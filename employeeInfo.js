@@ -1,59 +1,5 @@
 const inquirer = require('inquirer')
 const fs = require('fs')
-const internal = require('stream')
-
-//  const questions = () => {  
-//     function generateEmployee() {
-//     inquirer.prompt(
-//     {
-//         type: 'input',
-//         name: 'EmployeeName',
-//         message: "What is the name of this employee?"
-//     },
-//     {
-//         type: 'list',
-//         name: 'position',
-//         message: 'What is there position?',
-//         choices: ['Engineer', 'Manager', 'Intern']
-//     }
-//  )
-//     .then((response) => {
-//         switch (response.position) {
-//             case "Engineer":
-//                 engineer()
-//                 break
-//             case "Manager":
-//                 manager()
-//                 break
-//             case "Intern":
-//                 internal()
-//                 break    
-            
-//         }
-//  })
-//     }
-
-//     function engineer() {
-//         inquirer.prompt({
-//             type: "input",
-//             name: "engineerID",
-//             message: "What is your employee ID number?"
-//         },
-//         {
-//             type: "input",
-//             name: "egineerEmail",
-//             message: "What is your email address?"
-//         },
-//         {
-//             type: "input",
-//             name: "engineerGitHub",
-//             message: "What is your GitHub profile?"
-//         })
-//     }
-// }
-
-
-
 
 const questions = [ 
     {

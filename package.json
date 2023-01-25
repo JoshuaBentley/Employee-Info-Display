@@ -1,26 +1,28 @@
 {
-  "name": "employee-info-display",
+  "name": "party-creator",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "reset": "rm ./dist/index.html",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JoshuaBentley/Employee-Info-Display.git"
+    "url": "git+https://github.com/graveto/party-creator.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/JoshuaBentley/Employee-Info-Display/issues"
+    "url": "https://github.com/graveto/party-creator/issues"
   },
-  "homepage": "https://github.com/JoshuaBentley/Employee-Info-Display#readme",
+  "homepage": "https://github.com/graveto/party-creator#readme",
   "dependencies": {
-    "fs": "^0.0.1-security",
     "inquirer": "^8.2.4"
+  },
+  "devDependencies": {
+    "jest": "^29.3.1"
   }
 }
