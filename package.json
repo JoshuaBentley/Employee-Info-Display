@@ -20,7 +20,8 @@
   },
   "homepage": "https://github.com/graveto/party-creator#readme",
   "dependencies": {
-    "inquirer": "^8.2.4"
+    "inquirer": "^8.2.4",
+    "path": "^0.12.7"
   },
   "devDependencies": {
     "jest": "^29.3.1"
