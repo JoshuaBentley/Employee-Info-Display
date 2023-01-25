@@ -36,7 +36,7 @@ const employeeQuestions = () => {
         })
     }
     
-    function engineer() {
+    function addEngineer() {
         inquirer.prompt([
             {
             type: "input",
@@ -76,9 +76,20 @@ const employeeQuestions = () => {
             message: "What is the GitHub profile for your engineer?"
             }
         ])
+        .then((response) => {
+            const engineer = new Engineer(
+              response.engineerName,
+              response.engineerId,
+              response.engineerEmail,
+              response.engineerGitHub
+            );
+            bandMembers.push(engineer);
+            idsArray.push(response.engineerId);
+            createEmployee();
+          });
     }
 
-    function manager() {
+    function addManager() {
         inquirer.prompt([
             {
             type: "input",
@@ -119,9 +130,20 @@ const employeeQuestions = () => {
             message: "What is the GitHub profile for your manager?"
             }
         ])
+        .then((response) => {
+            const manager = new Manager(
+              response.managerName,
+              response.managerId,
+              response.managerEmail,
+              response.managerGitHub
+            );
+            bandMembers.push(manager);
+            idsArray.push(response.managerId);
+            createEmployee();
+          });
     }
 
-    function intern() {
+    function addIntern() {
         inquirer.prompt([
             {
             type: "input",
@@ -157,10 +179,21 @@ const employeeQuestions = () => {
             },
             {
             type: "input",
-            name: "internGitHub",
-            message: "What is the GitHub profile for your intern?"
+            name: "internSchool",
+            message: "What is the name of the intern's school?"
             }
         ])
+        .then((response) => {
+            const intern = new Intern(
+              response.internName,
+              response.internId,
+              response.internEmail,
+              response.internGitHub
+            );
+            bandMembers.push(intern);
+            idsArray.push(response.internId);
+            createEmployee();
+          });
     }
 }
 
