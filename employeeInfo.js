@@ -4,6 +4,11 @@ const path = require('path')
 const manager = require('./lib/manager')
 const engineer = require('./lib/engineer')
 const intern = require('./lib/intern') 
+const generateEmployee = require('./src/createEmployee')
+const { create } = require('domain')
+
+const DIST_DIR = path.resolve(__dirname, 'dist')
+const distPath = path.join(DIST_DIR, "index.html")
 
 const employeeIDs = []
 const employeeNames = []
@@ -95,8 +100,8 @@ const employeeQuestions = () => {
               response.engineerEmail,
               response.engineerGitHub
             );
-            bandMembers.push(engineer);
-            idsArray.push(response.engineerId);
+            employeeNames.push(engineer);
+            employeeIDs.push(response.engineerId);
             createEmployee();
           });
     }
@@ -161,8 +166,8 @@ const employeeQuestions = () => {
               response.managerEmail,
               response.managerGitHub
             );
-            bandMembers.push(manager);
-            idsArray.push(response.managerId);
+            employeeNames.push(manager);
+            employeeIDs.push(response.managerId);
             createEmployee();
           });
     }
@@ -224,13 +229,22 @@ const employeeQuestions = () => {
               response.internName,
               response.internId,
               response.internEmail,
-              response.internGitHub
+              response.internSchool
             );
-            bandMembers.push(intern);
-            idsArray.push(response.internId);
+            employeeNames.push(intern);
+            employeeIDs.push(response.internId);
             createEmployee();
           });
     }
+
+    const buildEmployees = () => {
+        if(!fs.existsSync(DIST_DIR)) {
+            fs.mkdirSync(DIST_DIR)
+        }
+        fs.writeFileSync(distPath, generateEmployee(engineer), 'utf-8' )
+    }
+    
+    createEmployee()
 }
 
 
