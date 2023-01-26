@@ -1,9 +1,9 @@
 const inquirer = require('inquirer')
 const fs = require('fs')
 const path = require('path')
-const manager = require('./lib/manager')
-const engineer = require('./lib/engineer')
-const intern = require('./lib/intern') 
+const Manager = require('./lib/manager')
+const Engineer = require('./lib/engineer')
+const Intern = require('./lib/intern') 
 const generateEmployee = require('./src/createEmployee')
 const { create } = require('domain')
 
@@ -25,17 +25,17 @@ const employeeQuestions = () => {
         ])
         .then((response) => {
             switch (response.position) {
-            case "Egineer":
-                engineer()
+            case "Engineer":
+                addEngineer()
                 break
             case "Manager":
-                manager()
+                addManager()
                 break
             case "Intern":
-                intern()
+                addIntern()
                 break
             case "I have no more employees to add":
-                outOfEmployees()
+                buildEmployees()
                 break    
             }
         })
@@ -241,7 +241,7 @@ const employeeQuestions = () => {
         if(!fs.existsSync(DIST_DIR)) {
             fs.mkdirSync(DIST_DIR)
         }
-        fs.writeFileSync(distPath, generateEmployee(engineer), 'utf-8' )
+        fs.writeFileSync(distPath, generateEmployee(Engineer), 'utf-8' )
     }
     
     createEmployee()
