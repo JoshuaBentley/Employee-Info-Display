@@ -68,12 +68,24 @@ const employeeQuestions = () => {
             {
             type: "input",
             name: "engineerEmail",
-            message: "What is the email address for your engineer?"
+            message: "What is the email address for your engineer?",
+            validate: (answer) => {
+                if(answer !== "") { 
+                    return true
+                }
+                return "You need to enter an email address for this employee"
+            }
             },
             {
             type: "input",
             name: "engineerGitHub",
-            message: "What is the GitHub profile for your engineer?"
+            message: "What is the GitHub profile for your engineer?",
+            validate: (answer) => {
+                if(answer !== "") { 
+                    return true
+                }
+                return "You need to enter an GitHub for this employee"
+            }
             }
         ])
         .then((response) => {
@@ -122,12 +134,24 @@ const employeeQuestions = () => {
             {
             type: "input",
             name: "managerEmail",
-            message: "What is the email address for your manager?"
+            message: "What is the email address for your manager?",
+            validate: (answer) => {
+                if(answer !== "") { 
+                    return true
+                }
+                return "You need to enter an email address for this employee"
+            }
             },
             {
             type: "input",
             name: "managerGitHub",
-            message: "What is the GitHub profile for your manager?"
+            message: "What is the GitHub profile for your manager?",
+            validate: (answer) => {
+                if(answer !== "") { 
+                    return true
+                }
+                return "You need to enter an GitHub for this employee"
+            }
             }
         ])
         .then((response) => {
@@ -175,12 +199,24 @@ const employeeQuestions = () => {
             {
             type: "input",
             name: "internEmail",
-            message: "What is the email address for your intern?"
+            message: "What is the email address for your intern?",
+            validate: (answer) => {
+                if(answer !== "") { 
+                    return true
+                }
+                return "You need to enter an email address for this employee"
+            }
             },
             {
             type: "input",
             name: "internSchool",
-            message: "What is the name of the intern's school?"
+            message: "What is the name of the intern's school?",
+            validate: (answer) => {
+                if(answer !== "") { 
+                    return true
+                }
+                return "You need to enter a school for this intern"
+            }
             }
         ])
         .then((response) => {
