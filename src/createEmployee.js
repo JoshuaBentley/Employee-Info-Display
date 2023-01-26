@@ -9,8 +9,9 @@ const createEmployee = (employee) => {
               <li class="list-group-item heading">
                 <i class="fa-solid fa-user"></i>${manager.getPosition()}
               </li>
-              <li class="list-group-item">Naruto</li>
-              <li class="list-group-item">Asta</li>
+              <li class="list-group-item">${manager.getId()}</li>
+              <li class="list-group-item">${manager.getEmail()}</li>
+              <li class="list-group-item">${manager.getGitHub()}</li>
             </ul>
           </div>
         </div>
@@ -27,26 +28,28 @@ const createEmployee = (employee) => {
               <li class="list-group-item heading">
                 <i class="fa-solid fa-user"></i>${engineer.getPosition()}
               </li>
-              <li class="list-group-item">Naruto</li>
-              <li class="list-group-item">Asta</li>
+              <li class="list-group-item">${engineer.getId()}</li>
+              <li class="list-group-item">${engineer.getEmail()}</li>
+              <li class="list-group-item">${engineer.getGitHub()}</li>
             </ul>
           </div>
         </div>
         `
     }; 
 
-    const addIntern = (engineer) => {
+    const addIntern = (intern) => {
       return `
       <div class="col d-flex justify-content-center">
       <div class="card" style="width: 18rem">
         <div class="card-body">
           <ul class="list-group">
-            <li class="list-group-item heading">${engineer.getName()}</li>
+            <li class="list-group-item heading">${intern.getName()}</li>
             <li class="list-group-item heading">
-              <i class="fa-solid fa-user"></i>${engineer.getPosition()}
+              <i class="fa-solid fa-user"></i>${intern.getPosition()}
             </li>
-            <li class="list-group-item">Naruto</li>
-            <li class="list-group-item">Asta</li>
+            <li class="list-group-item">${intern.getId()}</li>
+            <li class="list-group-item">${intern.getEmail()}</li>
+            <li class="list-group-item">${intern.getGitHub()}</li>
           </ul>
         </div>
       </div>
