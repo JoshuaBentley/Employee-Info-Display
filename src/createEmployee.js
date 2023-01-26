@@ -58,22 +58,22 @@ const createEmployee = (employee) => {
     const html = [];
 
     html.push(
-         employee
-            .filter((allEmployees) => allEmployees.getPosition() === 'Manager')
-            .map((manager) => addManager(manager))
-            .join('')
+          employee
+          .filter((allEmployees) => allEmployees.getPosition() === 'Manager')
+          .map((manager) => addManager(manager))
+          .join('')
     );
     html.push(
-      employee
-         .filter((allEmployees) => allEmployees.getPosition() === 'Engineer')
-         .map((engineer) => addEngineer(engineer))
-         .join('')
+        employee
+        .filter((allEmployees) => allEmployees.getPosition() === 'Engineer')
+        .map((engineer) => addEngineer(engineer))
+        .join('')
     );
     html.push(
-      employee
-         .filter((allEmployees) => allEmployees.getPosition() === 'Intern')
-         .map((intern) => addIntern(intern))
-         .join('')
+        employee
+        .filter((allEmployees) => allEmployees.getPosition() === 'Intern')
+        .map((intern) => addIntern(intern))
+        .join('')
     );  
     return html.join('')
 }    
@@ -103,7 +103,7 @@ module.exports = (employee) => {
         <h1>Employee thingy</h1>
         <div class="container text-center">
           <div class="row">
-            ${createEMployee(employee)}
+            ${createEmployee(employee)}
           </div>
         </div>
       </body>
