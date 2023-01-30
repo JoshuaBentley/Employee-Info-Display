@@ -5,7 +5,6 @@ const Manager = require('./lib/manager')
 const Engineer = require('./lib/engineer')
 const Intern = require('./lib/intern') 
 const generateEmployee = require('./src/createEmployee')
-const { create } = require('domain')
 
 const DIST_DIR = path.resolve(__dirname, 'dist')
 const distPath = path.join(DIST_DIR, "index.html")

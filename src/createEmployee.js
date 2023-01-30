@@ -1,4 +1,4 @@
-const createEmployee = (employee) => {
+const createEmployee = (employee) => { 
     const addManager = (manager) => {
         return `
         <div class="col d-flex justify-content-center">
@@ -54,7 +54,7 @@ const createEmployee = (employee) => {
         </div>
       </div>
       `
-  }; 
+    }; 
     const html = [];
 
     html.push(
